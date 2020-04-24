@@ -1,17 +1,17 @@
 {
-    "name": "spatie/:package_name",
+    "name": "idbi/:package_name",
     "description": ":package_description",
     "keywords": [
-        "spatie",
+        "idbi",
         ":package_name"
     ],
-    "homepage": "https://github.com/spatie/:package_name",
+    "homepage": "https://github.com/idbi/:package_name",
     "license": "MIT",
     "authors": [
         {
             "name": ":author_name",
             "email": ":author_email",
-            "homepage": "https://spatie.be",
+            "homepage": "https://idbi.be",
             "role": "Developer"
         }
     ],
@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src"
+            "ID\\:package_namespace\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "ID\\:package_namespace\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -45,10 +45,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
+                "ID\\:package_namespace\\:package_namespaceServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+                "ID": "ID\\:package_namespace\\:package_namespaceFacade"
             }
         }
     },

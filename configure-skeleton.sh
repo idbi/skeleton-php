@@ -18,6 +18,8 @@ current_directory=`basename $current_directory`
 read -p "Package name ($current_directory): " package_name
 package_name=${package_name:-$current_directory}
 
+read -p "Package namespace: " package_namespace
+
 read -p "Package description: " package_description
 
 echo
@@ -26,7 +28,7 @@ echo -e "Package: $package_name <$package_description>"
 
 echo
 echo "This script will replace the above values in all files in the project directory and reset the git repository."
-read -p "Are you sure you wish to continue? (n/y) " -n 1 -r
+read -p "Are you sure you wish to continue? (n/Y) " -n 1 -r
 
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]
@@ -41,13 +43,14 @@ git init
 
 echo
 
-find . -type f -exec sed -i '' -e "s/:author_name/$author_name/" {} \;
-find . -type f -exec sed -i '' -e "s/:author_username/$author_username/" {} \;
-find . -type f -exec sed -i '' -e "s/:author_email/$author_email/" {} \;
-find . -type f -exec sed -i '' -e "s/:package_name/$package_name/" {} \;
-find . -type f -exec sed -i '' -e "s/:package_description/$package_description/" {} \;
+find . -type f -exec sed -i -e "s/:author_name/$author_name/" {} \;
+find . -type f -exec sed -i -e "s/:author_username/$author_username/" {} \;
+find . -type f -exec sed -i -e "s/:author_email/$author_email/" {} \;
+find . -type f -exec sed -i -e "s/:package_name/$package_name/" {} \;
+find . -type f -exec sed -i -e "s/:package_description/$package_description/" {} \;
+find . -type f -exec sed -i -e "s/:package_namespace/$package_namespace/" {} \;
 
-sed -i '' -e "/^\*\*Note:\*\* Replace/d" README.md
+sed -i -e "/^\*\*Note:\*\* Replace/d" README.md
 
 echo "Replaced all values and reset git directory, self destructing in 3... 2... 1..."
 
