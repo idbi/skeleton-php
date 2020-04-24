@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Skeleton;
+namespace ID\Skeleton;
 
 class SkeletonClass
 {

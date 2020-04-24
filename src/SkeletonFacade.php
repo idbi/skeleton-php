@@ -1,11 +1,11 @@
 <?php
 
-namespace Spatie\Skeleton;
+namespace ID\Skeleton;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Spatie\Skeleton\SkeletonClass
+ * @see \ID\Skeleton\SkeletonClass
  */
 class SkeletonFacade extends Facade
 {
